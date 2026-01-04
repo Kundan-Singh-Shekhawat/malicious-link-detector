@@ -1,4 +1,9 @@
+import sys
+import os
 import pandas as pd
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from src.features import extract_features
 
 # Load dataset
