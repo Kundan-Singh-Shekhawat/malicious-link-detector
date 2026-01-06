@@ -30,3 +30,17 @@ A Logistic Regression model was trained using basic URL features such as length,
 - The model detects obvious malicious URLs with high precision.
 - Recall for malicious URLs is low, indicating many subtle phishing links are missed.
 - This highlights the limitation of keyword-based features and motivates more expressive text-based features.
+
+## TF-IDF Model Results (v2)
+
+A TF-IDF based Logistic Regression model was trained to capture statistical patterns in URLs beyond hand-crafted keywords.
+
+**Test Set Performance:**
+- Accuracy: ~93%
+- Precision (Malicious): ~91%
+- Recall (Malicious): ~92%
+
+**Comparison with Baseline:**
+- Significant improvement in recall for malicious URLs
+- Better detection of subtle phishing links
+- Confirms limitations of keyword-only approaches
