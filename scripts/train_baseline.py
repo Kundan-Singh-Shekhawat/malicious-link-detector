@@ -11,12 +11,13 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 
 from src.features import extract_features
 
-# Load dataset
+# Load malicious URL dataset
 df = pd.read_csv("data/urls.csv")
 
 # Build features
 X = pd.DataFrame([extract_features(url) for url in df["url"]])
 y = df["label"]
+feature_names = X.columns.tolist()
 
 # Train-test split
 X_train,X_test,y_train,y_test = train_test_split(
@@ -36,3 +37,9 @@ print(confusion_matrix(y_test, y_pred))
 
 print("\nClassification Report:")
 print(classification_report(y_test,y_pred))
+
+import joblib
+
+os.makedirs("models", exist_ok=True)
+joblib.dump(model, "models/malicious_link_model.joblib")
+joblib.dump(feature_names, "models/feature_names.joblib")
