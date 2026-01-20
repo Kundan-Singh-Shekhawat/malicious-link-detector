@@ -1,6 +1,14 @@
-# Malicious URL Detection
+# Malicious Link Detector (Deployed)
 
 This project explores detecting malicious or phishing URLs using machine learning.
+
+## 🔗 Live Deployment (Swagger UI)
+
+The API is publicly deployed on AWS EC2 and can be accessed here:
+
+👉 http://3.110.213.9:8000/docs
+
+You can use this Swagger UI to test the `/predict` endpoint with real URLs.
 
 ## Current Status
 
@@ -235,5 +243,6 @@ These limitations provide clear scope for future work.
 ✔ Model training completed  
 ✔ FastAPI inference service implemented  
 ✔ Docker containerization completed  
+✔ Deployed on AWS EC2 (public API)
 
 --- END NEW README CONTENT ---
