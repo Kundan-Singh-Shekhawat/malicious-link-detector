@@ -1,63 +1,9 @@
-# Malicious Link Detector (Deployed)
-
-This project explores detecting malicious or phishing URLs using machine learning.
-
-## 🔗 Live Deployment (Swagger UI)
-
-The API is publicly deployed on AWS EC2 and can be accessed here:
-
-👉 http://3.110.213.9:8000/docs
-
-You can use this Swagger UI to test the `/predict` endpoint with real URLs.
-
-## Current Status
-
-- Dataset loading and exploration
-- Understanding class distribution and basic URL characteristics
-
-## Dataset
-
-The dataset contains URLs labeled as benign or malicious and is used for supervised learning experiments.
-
-## Next Steps
-
-- Feature engineering on URLs (keywords, structure)
-- Baseline ML model training
-
-
-## Baseline Model Results (Keyword + Structural Features)
-
-A Logistic Regression model was trained using basic URL features such as length, digit count, special character count, and suspicious keyword presence.
-
-**Test Set Performance:**
-- Accuracy: ~72%
-- Precision (Malicious): ~83%
-- Recall (Malicious): ~47%
-
-**Observations:**
-- The model detects obvious malicious URLs with high precision.
-- Recall for malicious URLs is low, indicating many subtle phishing links are missed.
-- This highlights the limitation of keyword-based features and motivates more expressive text-based features.
-
-## TF-IDF Model Results (v2)
-
-A TF-IDF based Logistic Regression model was trained to capture statistical patterns in URLs beyond hand-crafted keywords.
-
-**Test Set Performance:**
-- Accuracy: ~93%
-- Precision (Malicious): ~91%
-- Recall (Malicious): ~92%
-
-**Comparison with Baseline:**
-- Significant improvement in recall for malicious URLs
-- Better detection of subtle phishing links
-- Confirms limitations of keyword-only approaches
 # Malicious Link Detector
 
 This project implements a machine learning–based **malicious URL detection system** and exposes it as a **REST API using FastAPI**.  
 The system analyzes URLs, extracts handcrafted features, and predicts the probability that a link is malicious (phishing, scam, or harmful).
 
-The trained model is served as an **inference service**, containerized with **Docker**, and designed for deployment.
+The trained model is served as an **inference service** and containerized with **Docker**.
 
 ---
 
@@ -233,7 +179,7 @@ These limitations provide clear scope for future work.
 
 - Character-level or deep learning–based models  
 - Rate limiting and authentication  
-- Cloud deployment on AWS  
+- Cloud deployment  
 - Continuous retraining with fresh data  
 
 ---
@@ -242,7 +188,4 @@ These limitations provide clear scope for future work.
 
 ✔ Model training completed  
 ✔ FastAPI inference service implemented  
-✔ Docker containerization completed  
-✔ Deployed on AWS EC2 (public API)
-
---- END NEW README CONTENT ---
+✔ Docker containerization completed
